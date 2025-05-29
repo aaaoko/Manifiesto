@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Speedrun Web</title>
+  <style>
+    body {
+      background-color: #007BFF;
+      margin: 0;
+      padding: 40px;
+      font-family: 'Press Start 2P', monospace;
+      color: white;
+    }
+
+    .game-text {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border: 3px solid white;
+      text-align: left;
+      white-space: pre-line; /* mantiene saltos de línea */
+      max-width: 90vw;
+      overflow-wrap: break-word; /* por si hay palabras larguísimas */
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+</head>
+<body>
+  <div class="game-text">
+   MANIFIESTO DE UNA GENERACIÓN DESILUSIONADAMENTE CONECTADA
+
+Hijas del render y del .JPG
+
+
+
+Gracias al arte contemporáneo podemos hacer lo que queramos.
+El arte contemporáneo nos liberó del soporte físico, del cubo blanco y del muro institucional. La evolución artística de las últimas décadas nos abrió un campo donde lo digital, lo especulativo, lo híbrido y lo virtual son territorio legítimo. Nos posicionamos en este punto sociocultural gracias al caos del archivo visual global y a la posibilidad de crear desde cualquier parte, sin pedir permiso.
+I. ¿Quiénes somos?
+Nos vemos inspiradas por la tecnología, las estéticas pop, el medioambiente y el consumismo de las masas.
+
+- Usamos las promesas fallidas del futuro como materia prima.
+
+- Trabajamos con la sátira, el reciclaje visual y el maximalismo.
+II. Nuestra Desilusión: El Futuro No Llegó
+Nos prometieron autos voladores y terminamos con filtros de Instagram.
+- Nos inspiramos en los errores de esa promesa.
+ Frutiger Aero, Y2K, lo “futurista” de los 2000, son nuestras referencias visuales.
+ Los usamos para criticar, desde adentro, los excesos de un sistema que vendió utopías empaquetadas.
+
+ Lo que brilla, engaña.
+III. Estética como Trampa
+El arte debe ser entretenido.
+ La visualidad llamativa es nuestro anzuelo.
+El mensaje debe estar escondido.
+
+ - Queremos que el espectador disfrute el momento estético, que se quede mirando porque algo le seduce.
+Lo estético no es superficial. Es nuestra estrategia.
+ Maximalismo como resistencia.
+V. El Sentido No Se Regala
+Nuestra obra es centrífuga: parte desde un núcleo, pero se expande confundiendo.
+ Las conexiones no son obvias.
+ No entregamos respuestas; ofrecemos pistas.
+ Creamos caos intencional, desbordes simbólicos y relaciones complejas.
+ Nuestra estética no se explica, se vive.
+VI. Intenciones y Tácticas
+Criticamos la cultura de masas sin que se den cuenta.
+
+
+Usamos los propios objetos que criticamos (plástico, low-cost, kitsch).
+
+
+Jugamos. Satirizamos.
+Menos nunca fue más.
+
+
+Reflexionamos desde la ironía.
+
+
+Mostramos la crisis climática como protagonista, no como fondo.
+
+
+Creamos desde la subjetividad camuflada.
+
+
+ Actitudes
+Ser efectista también es ser crítico.
+
+
+El internet es tu segunda madre.
+
+
+Viva el mixed media.
+
+
+No a la pureza.
+
+
+El museo debe ser un parque de diversiones, un laboratorio, una interfaz.
+
+
+Edita
+
+
+Esconde tu mensaje.
+Celebra el exceso.
+
+
+Lo inútil importa.
+
+
+No pidas permiso.
+
+
+Los enchufes nunca sobran.
+
+
+
+VIII. Nuestra Iconósfera
+El capitalismo dejó sus huellas en todas las imágenes.
+
+
+La era digital las volvió pobres, comprimidas, remixadas.
+
+
+El pop nos enseñó a apropiarnos de todo.
+
+
+Hoy somos habitantes de la iconósfera. Un universo sobrepoblado de signos visuales que reconfiguramos a diario.
+
+Recicla. Recontextualiza. Repite. Exagera. Deforma.
+
+
+
+IX. Seducir para decir
+El impacto visual es crucial.
+
+
+Trabajamos con psicología del color, saturación, formas ambiguas y apropiación de lo cotidiano.
+
+
+No buscamos realismo; nuestras imágenes no existen en el mundo físico, pero podrían.
+
+
+El caos visual es una herramienta para activar conexiones mentales.
+
+
+Somos autorreferentes sin ser autobiográficas.
+
+
+X. Dónde Habitamos
+Espacio digital o cerrado, con luces controladas, múltiples pantallas, proyectores y enchufes.
+
+
+Nos apropiamos del espacio como una instalación viva.
+
+
+El museo se transforma: es interfaz, laboratorio y escenografía.
+
+
+XI. Curaduría de nuestra era
+Espacio digital o cerrado, con luces controladas, múltiples pantallas, proyectores y enchufes..
+Eras digitales.
+Futurismos
+Recontextualización de la basura visual.
+
+XII. Futuro (Re)mezclado
+El futuro fue prometedor.
+
+
+El futuro es una broma.
+
+
+El futuro es render, glitch, .JPG, Deep Fake, auto tune emocional.
+
+
+Lo único seguro es que lo vamos a editar.
+
+  </div>
+</body>
+</html>
