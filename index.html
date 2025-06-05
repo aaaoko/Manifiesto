@@ -10,13 +10,13 @@
       margin: 0;
       padding: 40px;
       font-family: 'Press Start 2P', monospace;
-      color: white;
+      color: black;
       position: relative;
-  z-index: 1;
+      z-index: 1;
     }
 
     .game-text {
-      padding: 20px;
+       padding: 20px;
       text-align: left;
       white-space: pre-line;
       max-width: 70vw;
@@ -34,18 +34,30 @@ img {
   position: relative;
    z-index: 4;
 }
+    .gif-row {
+  display: flex;
+  gap: 10px; /* espacio entre gifs */
+  align-items: center; /* para alinear verticalmente */
+}
+
+.gif-row img {
+  width: 100px; /* tamaño opcional */
+  height: auto;
+}
+
     .background {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(5, 20, 79, 0.85); /* azul oscuro semi-transparente */
+  z-index: 1;
   z-index: 0;
   background-size: cover;
   background-position: center;
-  animation: fondoLoop 15s infinite;
+  animation: fondoLoop 0.1s infinite;
 }
     
-
 @keyframes fondoLoop {
   0%   { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.07_5b0c54d3.jpg'); }
   25%  { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.07_88b5e7d4.jpg'); }
@@ -53,25 +65,60 @@ img {
   75% { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.14.40_d4300cec.jpg'); }
    100%   { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.07_5b0c54d3.jpg'); }
 }
+    .explosion-sticker {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 9999;
+  pointer-events: none;
+}
+
     .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(5, 20, 79, 0.85); /* azul oscuro semi-transparente */
+  background-color: rgba(5, 20, 79, 1); /* azul oscuro semi-transparente */
   z-index: 1;
+      animation: colores 0.3s infinite;
+      opacity: 50%
     }
-      .copia-container {
-        text-align: center;
-       background-color: #111;
-      border: 2px dashed #f00;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 500px;
-      width: 90%;
-      position: relative;
-      z-index: 9999;
+    @keyframes colores {
+  0%   { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.07_5b0c54d3.jpg'); }
+  25%  { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.07_88b5e7d4.jpg'); }
+  50%  { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.08_e15a37fc.jpg'); }
+  75% { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.14.40_d4300cec.jpg'); }
+   100%   { background-image: url('https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/Imagen%20de%20WhatsApp%202025-05-28%20a%20las%2022.11.07_5b0c54d3.jpg'); }
+}
+       .ror {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+ z-index: 2;
+               animation: lolo 10s infinite;
+      opacity: 50%
     }
+    @keyframes lolo {
+  0%   { background-color: rgba(255, 255, 0, 80); }
+  25%  { background-color: rgba(0, 255, 0, 0.8);}
+  50%  {background-color: rgba(0, 255, 255, 0.8);}
+  75% { background-color: rgba(255, 0, 255, 0.8);}
+   100%   { background-color: rgba(255, 255, 0, 80);}
+}
+     .copia-container {
+       color: white;
+  text-align: center;
+  background-color: #111;
+  border: 2px dashed #f00;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 90%;
+  width: 90%;
+  position: relative;
+  z-index: 9999;
+  margin: 0 auto; /* ESTO CENTRA EL CONTENEDOR */
+}
 
     textarea {
       width: 100%;
@@ -83,29 +130,88 @@ img {
       resize: none;
     }
 
-    button {
-      margin-top: 10px;
-      background-color: #ff0044;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+button {
+  display: block;      /* NECESARIO para que margin: auto funcione */
+  margin: 20px auto;   /* auto a los lados, y un poco de espacio arriba/abajo */
+  background-color: #ff0044;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
     button:hover {
       background-color: #cc0033;
     }
+    #seizure-warning {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: yellow;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+  padding: 20px;
+}
+
+.warning-content {
+  background: #111;
+  border: 3px solid yellow;
+  padding: 40px;
+  box-shadow: 0 0 20px yellow;
+  max-width: 600px;
+}
+
+.warning-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: yellow;
+  color: black;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 
   </style>
 </head>
 <body>
+  <div id="seizure-warning">
+  <div class="warning-content">
+    ⚠️ ADVERTENCIA ⚠️<br><br>
+    Este sitio contiene luces parpadeantes, animaciones rápidas y patrones visuales intensos.<br><br>
+    Si eres fotosensible o tienes antecedentes de epilepsia, se recomienda no continuar.<br><br>
+    <button onclick="enterSite()">ENTRAR</button>
+  </div>
+    <script>
+  function enterSite() {
+    document.getElementById('seizure-warning').style.display = 'none';
+  }
+</script>
+
+</div>
+
   <div class="background"></div>
   <div class="overlay"></div>
+  <div class="ror"></div>
 
   <img src="https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/blinkiesCafe-qp.gif" alt="Esta información es secreta jijiji" />
 
-<button onclick="reproducirAudio()" style="position: relative; z-index: 9999; padding: 10px 20px; background: crimson; color: white; border: none; border-radius: 5px; font-family: monospace; font-size: 1.2em; cursor: pointer;">
+<button onclick="reproducirAudio()" class="copia-container">
   AMBIENTE
 </button>
 
@@ -125,305 +231,23 @@ img {
   }
 </script>
 
+<video controls style="position: relative; z-index: 9999; max-width: 30%; height: 10%; display: block; margin: 20px auto;">
 
-  <div class="game-text">
-    <span style="font-size:30px;">MANIFIESTO DE UNA GENERACIÓN </span> <span style="color:#ff00ff; font-size:30px;">DESILUSIONADAMENTE</span>   <span style="font-size:30px;">CONECTADA</span>
-
-  <span style="font-size: 12px; color: #00ffff;">Hijas del render y del</span> <span style="font-size: 12px; color: #00ffff;">.JPG</span>
-
-Gracias al arte contemporáneo podemos hacer lo que queramos.
-    
-El arte contemporáneo nos liberó del soporte físico, del cubo blanco y del muro institucional.
-    La evolución artística de las últimas décadas nos abrió un campo donde lo digital, lo especulativo, lo híbrido y lo virtual son territorio legítimo. 
-    
-    Nos posicionamos en este punto sociocultural gracias al caos del archivo visual global y a la posibilidad de crear desde cualquier parte,<span style="color: #00ffff;"> sin pedir permiso.</span>
-
-
-
-
-    <span style="color: #d4f10d ;"> I. ¿Quiénes somos?</span>
-
-    Nos vemos inspiradas por la tecnología, las estéticas pop, el medioambiente y el consumismo de las masas.
-
-- Usamos las promesas fallidas del futuro como materia prima.
-
-- Trabajamos con la sátira, el reciclaje visual y el maximalismo.
-
-
-    <span style="color: #d4f10d ;">II. Nuestra desilusión: El futuro no llegó</span>
-
-Nos prometieron autos voladores y terminamos con filtros de Instagram.
-
- Frutiger Aero, lo “futurista” de los 2000 y la estética kistch, son nuestras referencias visuales que usamos para criticar, desde adentro, los excesos de un sistema que nos vendió utopías empaquetadas.
-
-
-    <span style="color: #ff0000;">Lo que brilla, engaña.</span>
-
-
-
-    <span style="color: #d4f10d ;">III. Estética como trampa</span>
-    
-El arte debe ser entretenido.
-
-- La visualidad llamativa es nuestro anzuelo.
-
-- El mensaje debe estar escondido.
-
-- Queremos que el espectador disfrute el momento estético, que se quede mirando porque algo le seduce.
-
-- Lo estético no es superficial.
-  Es nuestra estrategia.
-
-
-    <span style="color: #ff0000;">Maximalismo como resistencia.</span>
-    
-    
-    <span style="color: #d4f10d ;">IV. El sentido no se regala</span>
-    
-Nuestra obra es centrífuga: parte desde un núcleo, pero se expande confundiendo.
-    
-- Las conexiones no son obvias.
-    
-- No entregamos respuestas, ofrecemos pistas.
-    
-- Creamos caos intencional, desbordes simbólicos y relaciones complejas.
-
-
-    <span style="color: #ff0000;">Menos nunca fue más.</span>
-
- 
-    Nuestra estética no se explica, se  <span style="color: #18ff00 ;">vive.</span>
-    
-    
-    <span style="color: #d4f10d ;">V. Intenciones y tácticas</span>
-    
-- Criticamos la cultura de masas sin que se den cuenta.
-
-
-- Usamos los propios objetos que criticamos (plástico, low-cost, kitsch).
-
-- Reflexionamos desde la ironía.
-
-- Jugamos. Satirizamos.
-
-- Creamos desde la subjetividad camuflada.
-
-
-    <span style="color: #d4f10d ;">Actitudes</span>
-    
-Ser efectista también es ser crítico.
-    
-Esconde tu mensaje.
-    
-Edita
-    
-Celebra el exceso.
-
-El museo debe ser un parque de diversiones, un laboratorio, una interfaz.
-
-Viva el mixed media.
-
-Lo inútil importa.
-
-No pidas permiso.
-
-Los enchufes nunca sobran.
-
-El internet es tu segunda madre.
-
-    
-    <span style="color: #d4f10d ;">Nuestra Iconósfera</span>
-    
-El capitalismo dejó sus huellas en todas las imágenes.
-
-La era digital las volvió pobres, comprimidas, remixadas.
-
-El pop nos enseñó a apropiarnos de todo.
-    
-Hoy somos habitantes de la iconósfera. Un universo sobrepoblado de signos visuales que reconfiguramos a diario.
-    
-Recicla. Recontextualiza. Repite. Exagera. Deforma.
-
-Seducir para decir
-    
-El impacto visual es crucial.
-
-
-Trabajamos con psicología del color, saturación, formas ambiguas y apropiación de lo cotidiano.
-
-
-No buscamos realismo. Nuestras imágenes no existen en el mundo físico, pero podrían.
-
-
-El caos visual es una herramienta para activar conexiones mentales.
-
-
-Somos autorreferentes sin ser autobiográficas.
-
-
-    <span style="color: #d4f10d ;">Curaduría de nuestra era</span>
-    
-Espacio digital o cerrado, con luces controladas, múltiples pantallas, proyectores y enchufes.
-
-Eras digitales.
-    
-Futurismos.
-    
-Recontextualizaciones de la basura visual.
-
-
-    <span style="color: #d4f10d ;">Futuro</span>
-    
-El futuro fue prometedor.
-
-El futuro es una broma.
-
-El futuro es render, glitch, .JPG, Deep Fake, auto tune.
-
-    Lo único seguro es que <span style="color: #d4f10d ;">lo vamos a editar.</span>
-
-</div>
-  <img src="https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/blinkiesCafe-qp.gif" alt="Esta información es secreta jijiji" />
-  </div>
-  <div class="copia-container" style="text-align: center; display: block;">
-    <h3> Copia y pega esto en 200 chats para tener salud y amor</h3>
+  <source src="https://raw.githubusercontent.com/aaaoko/Manifiesto/main/img/The%20Evolution%20of%20Art%20in%20the%20Digital%20Era.mp4" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
+    <div class="copia-container"  style="text-align: center; display: block; margin: 0 auto;">
+    <h3> Copia y pega esto en 200 chats para tener salud amor y muxa plAt4</h3>
     <textarea id="textoCreepypasta" readonly>
 MANIFIESTO DE UNA GENERACIÓN DESILUSIONADAMENTE CONECTADA
 
 Hijas del render y del .JPG
 
+Nacimos entre pantallas, promesas rotas y basura visual. Nuestra materia prima son los restos del futuro que no llegó: Frutiger Aero, kitsch 2000ero, filtros de Instagram. Criticamos el exceso usando el exceso. Nos apropiamos del pop, del plástico, de lo saturado y lo barato. Lo que brilla, engaña, y nosotras lo sabemos.
 
+Nuestra estética no es inocente: es una trampa. Seduce, confunde y no explica. Queremos que mires porque te atrapa, pero que te vayas incómodo. Trabajamos desde lo ambiguo, lo remixado, lo reciclado.
 
-Gracias al arte contemporáneo podemos hacer lo que queramos.
-El arte contemporáneo nos liberó del soporte físico, del cubo blanco y del muro institucional. La evolución artística de las últimas décadas nos abrió un campo donde lo digital, lo especulativo, lo híbrido y lo virtual son territorio legítimo. Nos posicionamos en este punto sociocultural gracias al caos del archivo visual global y a la posibilidad de crear desde cualquier parte, sin pedir permiso.
-
-
-
-
-I. ¿Quiénes somos?
-Nos vemos inspiradas por la tecnología, las estéticas pop, el medioambiente y el consumismo de las masas.
-
-- Usamos las promesas fallidas del futuro como materia prima.
-
-- Trabajamos con la sátira, el reciclaje visual y el maximalismo.
-
-
-II. Nuestra desilusión: El futuro no llegó
-
-Nos prometieron autos voladores y terminamos con filtros de Instagram.
-
- Frutiger Aero, lo “futurista” de los 2000 y la estética kistch, son nuestras referencias visuales que usamos para criticar, desde adentro, los excesos de un sistema que nos vendió utopías empaquetadas.
-
-
- Lo que brilla, engaña.
-
-
-
-III. Estética como trampa
-El arte debe ser entretenido.
-
-- La visualidad llamativa es nuestro anzuelo.
-
--El mensaje debe estar escondido.
-
-- Queremos que el espectador disfrute el momento estético, que se quede mirando porque algo le seduce.
-
-- Lo estético no es superficial.
-  Es nuestra estrategia.
-
-
- Maximalismo como resistencia.
-IV. El sentido no se regala
-Nuestra obra es centrífuga: parte desde un núcleo, pero se expande confundiendo.
-- Las conexiones no son obvias.
-- No entregamos respuestas, ofrecemos pistas.
-- Creamos caos intencional, desbordes simbólicos y relaciones complejas.
-
-
-Menos nunca fue más.
-
- 
- Nuestra estética no se explica, se vive.
-V. Intenciones y tácticas
-Criticamos la cultura de masas sin que se den cuenta.
-
-
-Usamos los propios objetos que criticamos (plástico, low-cost, kitsch).
-
-
-Reflexionamos desde la ironía.
-
-Jugamos. Satirizamos.
-
-
-Creamos desde la subjetividad camuflada.
-
-
- Actitudes
-Ser efectista también es ser crítico.
-Esconde tu mensaje.
-Edita
-Celebra el exceso.
-
-El museo debe ser un parque de diversiones, un laboratorio, una interfaz.
-
-
-Viva el mixed media.
-
-Lo inútil importa.
-
-
-No pidas permiso.
-
-
-Los enchufes nunca sobran.
-
-El internet es tu segunda madre.
-
-
-Nuestra Iconósfera
-El capitalismo dejó sus huellas en todas las imágenes.
-
-
-La era digital las volvió pobres, comprimidas, remixadas.
-
-
-El pop nos enseñó a apropiarnos de todo.
-
-
-Hoy somos habitantes de la iconósfera. Un universo sobrepoblado de signos visuales que reconfiguramos a diario.
-
-Recicla. Recontextualiza. Repite. Exagera. Deforma.
-
-
-
-Seducir para decir
-El impacto visual es crucial.
-
-
-Trabajamos con psicología del color, saturación, formas ambiguas y apropiación de lo cotidiano.
-
-
-No buscamos realismo. Nuestras imágenes no existen en el mundo físico, pero podrían.
-
-
-El caos visual es una herramienta para activar conexiones mentales.
-
-
-Somos autorreferentes sin ser autobiográficas.
-
-
-Curaduría de nuestra era
-Espacio digital o cerrado, con luces controladas, múltiples pantallas, proyectores y enchufes.
-
-Eras digitales.
-Futurismos.
-Recontextualizaciones de la basura visual.
-
-
-Futuro
-El futuro fue prometedor.
-
+El museo ya no es templo: debe ser un parque de diversiones, un laboratorio, una interfaz que parpadea. Nuestra iconósfera está sobrecargada de signos: los deformamos, repetimos y desbordamos. Celebramos lo inútil, lo subjetivo, lo que no pide permiso. Porque el futuro no existe.
 
 El futuro es una broma.
 
@@ -448,11 +272,184 @@ Lo único seguro es que lo vamos a editar.
       alert("HAS COPYPASTEADO EL MANIFIESTO");
     }
   </script>
-  <video controls style="position: relative; z-index: 9999; max-width: 100%; height: auto;">
-  <source src="https://raw.githubusercontent.com/aaaoko/Manifiesto/main/img/The%20Evolution%20of%20Art%20in%20the%20Digital%20Era.mp4" type="video/mp4">
-  Tu navegador no soporta video HTML5.
-</video>
+  <div class="game-text">
+    <span style="font-size:50px;">MANIFIESTO DE UNA GENERACIÓN </span> <span style="color:#ff00ff; font-size:50px;">DESILUSIONADAMENTE</span>   <span style="font-size:50px;">CONECTADA</span>
+<span>
+ <div class="gif-row">
+     <img src="https://i.gifer.com/7nVP.gif" alt="otro gif" />
+      <img src="https://i.gifer.com/Eadb.gif" alt="esto no es un gif"/>
+  <img src="https://i.pinimg.com/originals/fe/4c/43/fe4c439f3a1be55b255b19718bd01c52.gif" alt="glitch cat" />
+      <img src="https://i.gifer.com/Eadb.gif" alt="esto no es un gif"/>
+  <img src="https://i.gifer.com/7nVP.gif" alt="otro gif" />
+</div>
 
 
+Gracias al arte contemporáneo podemos hacer lo que queramos.
+    
+El arte contemporáneo nos liberó del soporte físico, del cubo blanco y del muro institucional.
+    La evolución artística de las últimas décadas nos abrió un campo donde lo digital, lo especulativo, lo híbrido y lo virtual son territorio legítimo. 
+    
+    Nos posicionamos en este punto sociocultural gracias al caos del archivo visual global y a la posibilidad de crear desde cualquier parte,<span style="color: #00ffff;"> sin pedir permiso.</span>
+
+
+
+
+    <span style="color: #001571 ; font-size:50px;"> I. ¿Quiénes somos?</span>
+  
+  <img style="height:30%; width:30%;" src="https://i.pinimg.com/originals/01/e2/ef/01e2ef89f09d8a5e78ccdca34fe59026.gif"/>
+
+    Nos vemos inspiradas por la tecnología, las estéticas pop, el medioambiente y el consumismo de las masas: Usamos las promesas fallidas del futuro como materia prima y Trabajamos con la sátira, el reciclaje visual y el maximalismo.
+  
+  <img style="height:30%; width:30%;" src="https://img1.picmix.com/output/pic/normal/1/3/8/3/11893831_56316.gif"/>
+
+
+    <span style="color: #001571 ; font-size:50px;">II. Nuestra desilusión: El futuro no llegó</span>
+  
+ Nos prometieron autos voladores y terminamos con filtros de Instagram.
+  
+  <div class="gif-row">
+ <img style="height:30%; width:30%;" src="https://media.tenor.com/EHR3JKmvBVcAAAAM/car-flying-car.gif"/>
+     <img style="height:10%; width:10%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPm4jBgoEARyOrIUTgpz5bs4bJoD9_TTa9lQ&s"/>
+     <img style="height:30%; width:30%;" src="https://media.tenor.com/EHR3JKmvBVcAAAAM/car-flying-car.gif"/>
+  </div>
+  
+ Frutiger Aero, lo “futurista” de los 2000 y la estética kistch, son nuestras referencias visuales que usamos para criticar, desde adentro, los excesos de un sistema que nos vendió utopías empaquetadas.
+
+
+    <span style="color: #ff0000;">Lo que brilla, engaña.</span>
+
+
+
+    <span style="color: #001571 ; font-size:50px;">III. Estética como trampa</span>
+  <img style="height:20%; width:20%;" src="https://i.pinimg.com/originals/eb/ff/42/ebff420d32790f7202c5c5102a2a27ca.gif"/>
+    
+El arte debe ser entretenido.
+
+- La visualidad llamativa es nuestro anzuelo: Lo estético no es superficial.
+    Es nuestra estrategia.
+
+- El mensaje debe estar escondido.
+
+    <span style="color: #ff0000;">Maximalismo como resistencia.</span>
+    
+      <img style="height:20%; width:20%;" src="https://i.pinimg.com/originals/03/a8/72/03a872a2da795de1adae3779ef863991.gif"/>
+  
+    <span style="color: #001571 ; font-size:50px;">IV. El sentido no se regala</span>
+  
+    <img style="height:20%; width:20%;" src="https://img.itch.zone/aW1nLzE0NDY2MDgxLnBuZw==/original/QB6DwZ.png"/>
+  
+Nuestra obra es centrífuga: parte desde un núcleo, pero se expande confundiendo.
+    
+- Las conexiones no son obvias.
+    
+- No entregamos respuestas, ofrecemos pistas.
+    
+- Creamos caos intencional, desbordes simbólicos y relaciones complejas.
+
+
+    <span style="color: #ff0000;">Menos nunca fue más.</span>
+
+ 
+    Nuestra estética no se explica, se  <span style="color: #18ff00 ;">vive.</span>
+    
+    
+    <span style="color: #001571 ; font-size:50px;">V. Intenciones y tácticas</span>
+    
+  <img style="height:20%; width:20%;" src="https://as2.ftcdn.net/jpg/03/09/70/57/1000_F_309705719_MeyONaWSzBBGLI0rsl3T6nVB9d2dLeBX.jpg"/>
+  
+- Criticamos la cultura de masas sin que se den cuenta.
+
+- Usamos los propios objetos que criticamos (plástico, low-cost, kitsch).
+
+- Reflexionamos desde la ironía.
+
+- Jugamos. Satirizamos.
+
+- Creamos desde la subjetividad camuflada.
+
+
+    <span style="color: #001571 ; font-size:50px;">Actitudes</span>
+  
+    <img style="height:20%; width:20%;" src="https://i.redd.it/y1iya3iiplc71.gif"/>
+  
+Ser efectista también es ser crítico.
+    
+Esconde tu mensaje.
+    
+Edita
+    
+Celebra el exceso.
+
+El museo debe ser un parque de diversiones, un laboratorio, una interfaz.
+
+Viva el mixed media.
+
+Lo inútil importa.
+
+No pidas permiso.
+
+Los enchufes nunca sobran.
+
+El internet es tu segunda madre.
+
+    
+    <span style="color: #001571 ; font-size:50px;">Nuestra Iconósfera</span>
+   <img style="height:20%; width:20%;" src="https://media.tenor.com/CDo9rXaH6GYAAAAj/windows-logo.gif"/>
+    
+El capitalismo dejó sus huellas en todas las imágenes.
+
+La era digital las volvió pobres, comprimidas, remixadas.
+
+El pop nos enseñó a apropiarnos de todo.
+    
+Hoy somos habitantes de la iconósfera. Un universo sobrepoblado de signos visuales que reconfiguramos a diario.
+    
+Recicla. Recontextualiza. Repite. Exagera. Deforma.
+
+El caos visual es una herramienta para activar conexiones mentales.
+
+
+    <span style="color: #001571 ; font-size:50px;">Futuro</span>
+     
+El futuro fue prometedor.
+
+El futuro es una broma.
+        <img style="height:40%; width:40%;" src="https://i1.sndcdn.com/avatars-pghZLEsUWrpC6Btq-3GxzBw-t1080x1080.jpg"/>
+
+El futuro es render, glitch, .JPG, Deep Fake, auto tune.
+
+    Lo único seguro es que <span style="color: #d4f10d ;">lo vamos a editar.</span>
+<script>
+  const gifURL = 'https://i.pinimg.com/originals/53/86/46/538646b3c5b2f40a80f929d658712b4b.gif';
+
+  function createExplosion() {
+    const img = document.createElement('img');
+    img.src = gifURL;
+    img.classList.add('explosion-sticker');
+    
+    // Posición random
+  img.style.top = Math.floor(Math.random() * document.body.scrollHeight) + 'px';
+
+    img.style.left = Math.floor(Math.random() * 90) + 'vw';
+
+    // Tamaño random entre 40 y 120 px
+    const size = Math.floor(Math.random() * 500) + 20;
+    img.style.width = size + 'px';
+
+    document.body.appendChild(img);
+
+    // Opcional: removerla después de X segundos
+    setTimeout(() => {
+      img.remove();
+    }, 20); // 5 segundos visibles
+  }
+
+  // Repetir para siempre cada 300ms
+  setInterval(createExplosion, 1);
+</script>
+
+</div>
+  <img src="https://raw.githubusercontent.com/aaaoko/Manifiesto/refs/heads/main/img/blinkiesCafe-qp.gif" alt="Esta información es secreta jijiji" />
+  </div>
 </body>
 </html>
